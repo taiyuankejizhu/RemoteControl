@@ -1,0 +1,350 @@
+
+Map of Debug\led.sm8 from link file Debug\led.lkf - Wed Jul 23 19:32:48 2014
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00008080 end 00008080 length     0 segment .const
+start 00008083 end 00008cc5 length  3138 segment .text
+start 00004000 end 00004000 length     0 segment .eeprom
+start 00000000 end 00000000 length     0 segment .bsct
+start 00000000 end 0000000e length    14 segment .ubsct
+start 0000000e end 0000000e length     0 segment .bit
+start 0000000e end 0000000e length     0 segment .share
+start 00000100 end 00000100 length     0 segment .data
+start 00000100 end 00000100 length     0 segment .bss
+start 00000000 end 00004d47 length 19783 segment .debug
+start 00008000 end 00008080 length   128 segment .const
+start 00008080 end 00008083 length     3 segment .init
+
+
+                               -------
+                               Modules
+                               -------
+
+D:\Program File\SToolset\compiler\Lib\crtsi0.sm8:
+start 00008083 end 000080ce length    75 section .text
+start 00000100 end 00000100 length     0 section .bss
+start 00000000 end 00000000 length     0 section .ubsct
+
+Debug\stm8s_gpio.o:
+start 000080ce end 00008179 length   171 section .text
+start 00000000 end 00000a0a length  2570 section .debug
+
+Debug\stm8s_spi.o:
+start 00008179 end 000082eb length   370 section .text
+start 00000a0a end 00001946 length  3900 section .debug
+
+Debug\gpio.o:
+start 000082eb end 000083c6 length   219 section .text
+start 00001946 end 00001ca5 length   863 section .debug
+
+Debug\main.o:
+start 000083c6 end 0000841e length    88 section .text
+start 00000000 end 00000008 length     8 section .ubsct
+start 00001ca5 end 00003bf6 length  8017 section .debug
+
+Debug\spi.o:
+start 0000841e end 00008cc4 length  2214 section .text
+start 00003bf6 end 00004bdc length  4070 section .debug
+
+(D:\Program File\SToolset\compiler\Lib\libm0.sm8)xreg.o:
+start 00000008 end 0000000b length     3 section .ubsct
+
+(D:\Program File\SToolset\compiler\Lib\libm0.sm8)yreg.o:
+start 0000000b end 0000000e length     3 section .ubsct
+
+Debug\stm8_interrupt_vector.o:
+start 00008cc4 end 00008cc5 length     1 section .text
+start 00004bdc end 00004d47 length   363 section .debug
+start 00008000 end 00008080 length   128 section .const
+
+
+                             -----------
+                             Stack usage
+                             -----------
+
+Debug\gpio.o:
+_GPIO_CS0                          7   (2)
+_GPIO_CS1                     >    7   (2)
+_GPIO_H_Init                       8   (2)
+_GPIO_KEY                          7   (2)
+_GPIO_LED                          8   (3)
+
+Debug\main.o:
+_main                         >   15   (2)
+
+Debug\spi.o:
+_ProportionalValve1_Init          13   (2)
+_ProportionalValve2_Init          13   (2)
+_ProportionalValve3_Init          13   (2)
+_ProportionalValve4_Init      >   13   (2)
+_SPI_H_Init                       12   (2)
+_SPI_W_R_Byte                     11   (4)
+_delay                             3   (3)
+
+Debug\stm8_interrupt_vector.o:
+f_NonHandledInterrupt         >    5   (5)
+
+Debug\stm8s_gpio.o:
+_GPIO_DeInit                       2   (2)
+_GPIO_ExternalPullUpConfig    >    6   (6)
+_GPIO_Init                         6   (6)
+_GPIO_ReadInputData           >    2   (2)
+_GPIO_ReadInputPin                 5   (5)
+_GPIO_ReadOutputData          >    2   (2)
+_GPIO_Write                   >    5   (5)
+_GPIO_WriteHigh                    5   (5)
+_GPIO_WriteLow                     5   (5)
+_GPIO_WriteReverse            >    5   (5)
+
+Debug\stm8s_spi.o:
+_SPI_BiDirectionalLineConfig  >    2   (2)
+_SPI_CalculateCRCCmd               5   (3)
+_SPI_ClearFlag                >    2   (2)
+_SPI_ClearITPendingBit        >    3   (3)
+_SPI_Cmd                           2   (2)
+_SPI_DeInit                        2   (2)
+_SPI_GetCRC                   >    3   (3)
+_SPI_GetCRCPolynomial         >    2   (2)
+_SPI_GetFlagStatus                 3   (3)
+_SPI_GetITStatus              >    5   (5)
+_SPI_ITConfig                 >    5   (5)
+_SPI_Init                         10   (10)
+_SPI_NSSInternalSoftwareCmd   >    2   (2)
+_SPI_ReceiveData                   2   (2)
+_SPI_ResetCRC                 >    7   (2)
+_SPI_SendData                      2   (2)
+_SPI_TransmitCRC              >    2   (2)
+
+Stack size: 20
+
+
+                              ---------
+                              Call tree
+                              ---------
+   1 > _GPIO_CS1: (2)
+   2      + _GPIO_WriteHigh: (5)
+       
+   3 > _GPIO_ExternalPullUpConfig: (6)
+
+   4 > _GPIO_ReadInputData: (2)
+
+   5 > _GPIO_ReadOutputData: (2)
+
+   6 > _GPIO_Write: (5)
+
+   7 > _GPIO_WriteReverse: (5)
+
+   8 > _ProportionalValve4_Init: (2)
+   9      + _SPI_W_R_Byte: (4)
+  10      |    + _GPIO_CS0: (2)
+  11      |    |    + _GPIO_WriteLow: (5)
+          |    | 
+  12      |    + _SPI_GetFlagStatus: (3)
+  13      |    + _SPI_ReceiveData: (2)
+  14      |    + _SPI_SendData: (2)
+  15      |    + _delay: (3)
+          | 
+  16      + _delay --> 15
+       
+  17 > _SPI_BiDirectionalLineConfig: (2)
+
+  18 > _SPI_ClearFlag: (2)
+
+  19 > _SPI_ClearITPendingBit: (3)
+
+  20 > _SPI_GetCRC: (3)
+
+  21 > _SPI_GetCRCPolynomial: (2)
+
+  22 > _SPI_GetITStatus: (5)
+
+  23 > _SPI_ITConfig: (5)
+
+  24 > _SPI_NSSInternalSoftwareCmd: (2)
+
+  25 > _SPI_ResetCRC: (2)
+  26      + _SPI_CalculateCRCCmd: (3)
+  27      |    + _SPI_Cmd: (2)
+          | 
+  28      + _SPI_Cmd --> 27
+       
+  29 > _SPI_TransmitCRC: (2)
+
+  30 > __stext: (0)
+
+  31 > _main: (2)
+  32      + _GPIO_H_Init: (2)
+  33      |    + _GPIO_DeInit: (2)
+  34      |    + _GPIO_Init: (6)
+  35      |    + _GPIO_WriteHigh --> 2
+  36      |    + _delay --> 15
+          | 
+  37      + _GPIO_KEY: (2)
+  38      |    + _GPIO_ReadInputPin: (5)
+          | 
+  39      + _GPIO_LED: (3)
+  40      |    + _GPIO_WriteHigh --> 2
+  41      |    + _GPIO_WriteLow --> 11
+  42      |    + _delay --> 15
+          | 
+  43      + _ProportionalValve1_Init: (2)
+  44      |    + _SPI_W_R_Byte --> 9
+  45      |    + _delay --> 15
+          | 
+  46      + _ProportionalValve2_Init: (2)
+  47      |    + _SPI_W_R_Byte --> 9
+  48      |    + _delay --> 15
+          | 
+  49      + _ProportionalValve3_Init: (2)
+  50      |    + _SPI_W_R_Byte --> 9
+  51      |    + _delay --> 15
+          | 
+  52      + _SPI_H_Init: (2)
+  53      |    + _SPI_Cmd --> 27
+  54      |    + _SPI_DeInit: (2)
+  55      |    + _SPI_Init: (10)
+          | 
+       
+  56 > f_NonHandledInterrupt: (5)
+
+  57   _GPIO_CS0 --> 10
+
+  58   _GPIO_DeInit --> 33
+
+  59   _GPIO_H_Init --> 32
+
+  60   _GPIO_Init --> 34
+
+  61   _GPIO_KEY --> 37
+
+  62   _GPIO_LED --> 39
+
+  63   _GPIO_ReadInputPin --> 38
+
+  64   _GPIO_WriteHigh --> 2
+
+  65   _GPIO_WriteLow --> 11
+
+  66   _ProportionalValve1_Init --> 43
+
+  67   _ProportionalValve2_Init --> 46
+
+  68   _ProportionalValve3_Init --> 49
+
+  69   _SPI_CalculateCRCCmd --> 26
+
+  70   _SPI_Cmd --> 27
+
+  71   _SPI_DeInit --> 54
+
+  72   _SPI_GetFlagStatus --> 12
+
+  73   _SPI_H_Init --> 52
+
+  74   _SPI_Init --> 55
+
+  75   _SPI_ReceiveData --> 13
+
+  76   _SPI_SendData --> 14
+
+  77   _SPI_W_R_Byte --> 9
+
+  78   _delay --> 15
+
+
+
+                               -------
+                               Symbols
+                               -------
+
+_GPIO_CS0                      00008390   defined in Debug\gpio.o section .text
+                                          used in Debug\spi.o
+_GPIO_CS1                      0000839a   defined in Debug\gpio.o section .text
+                                          used in Debug\spi.o
+_GPIO_DeInit                   000080ce   defined in Debug\stm8s_gpio.o section .text
+                                          used in Debug\gpio.o
+_GPIO_ExternalPullUpConfig     00008161   defined in Debug\stm8s_gpio.o section .text
+_GPIO_H_Init                   000082eb   defined in Debug\gpio.o section .text
+                                          used in Debug\main.o
+_GPIO_Init                     000080d6   defined in Debug\stm8s_gpio.o section .text
+                                          used in Debug\gpio.o
+_GPIO_KEY                      000083bc   defined in Debug\gpio.o section .text
+                                          used in Debug\main.o
+_GPIO_LED                      000083a4   defined in Debug\gpio.o section .text
+                                          used in Debug\main.o
+_GPIO_ReadInputData            00008157   defined in Debug\stm8s_gpio.o section .text
+_GPIO_ReadInputPin             0000815a   defined in Debug\stm8s_gpio.o section .text
+                                          used in Debug\gpio.o
+_GPIO_ReadOutputData           00008155   defined in Debug\stm8s_gpio.o section .text
+_GPIO_Write                    00008137   defined in Debug\stm8s_gpio.o section .text
+_GPIO_WriteHigh                0000813f   defined in Debug\stm8s_gpio.o section .text
+                                          used in Debug\gpio.o
+_GPIO_WriteLow                 00008146   defined in Debug\stm8s_gpio.o section .text
+                                          used in Debug\gpio.o
+_GPIO_WriteReverse             0000814e   defined in Debug\stm8s_gpio.o section .text
+_Mesg                          00000004   defined in Debug\main.o section .ubsct
+                                          used in Debug\spi.o
+_ProportionalValve1_Init       000084ca   defined in Debug\spi.o section .text
+                                          used in Debug\main.o
+_ProportionalValve2_Init       000086f1   defined in Debug\spi.o section .text
+                                          used in Debug\main.o
+_ProportionalValve3_Init       000088e2   defined in Debug\spi.o section .text
+                                          used in Debug\main.o
+_ProportionalValve4_Init       00008ad7   defined in Debug\spi.o section .text
+_RMesg                         00000000   defined in Debug\main.o section .ubsct
+                                          used in Debug\spi.o
+_SPI_BiDirectionalLineConfig   0000824f   defined in Debug\stm8s_spi.o section .text
+_SPI_CalculateCRCCmd           00008216   defined in Debug\stm8s_spi.o section .text
+_SPI_ClearFlag                 00008272   defined in Debug\stm8s_spi.o section .text
+_SPI_ClearITPendingBit         000082ce   defined in Debug\stm8s_spi.o section .text
+_SPI_Cmd                       000081bf   defined in Debug\stm8s_spi.o section .text
+                                          used in Debug\spi.o
+_SPI_DeInit                    00008179   defined in Debug\stm8s_spi.o section .text
+                                          used in Debug\spi.o
+_SPI_GetCRC                    0000822a   defined in Debug\stm8s_spi.o section .text
+_SPI_GetCRCPolynomial          0000824b   defined in Debug\stm8s_spi.o section .text
+_SPI_GetFlagStatus             0000825d   defined in Debug\stm8s_spi.o section .text
+                                          used in Debug\spi.o
+_SPI_GetITStatus               00008277   defined in Debug\stm8s_spi.o section .text
+_SPI_H_Init                    0000842b   defined in Debug\spi.o section .text
+                                          used in Debug\main.o
+_SPI_ITConfig                  000081cd   defined in Debug\stm8s_spi.o section .text
+_SPI_Init                      0000818e   defined in Debug\stm8s_spi.o section .text
+                                          used in Debug\spi.o
+_SPI_NSSInternalSoftwareCmd    00008203   defined in Debug\stm8s_spi.o section .text
+_SPI_ReceiveData               000081ff   defined in Debug\stm8s_spi.o section .text
+                                          used in Debug\spi.o
+_SPI_ResetCRC                  00008241   defined in Debug\stm8s_spi.o section .text
+_SPI_SendData                  000081fb   defined in Debug\stm8s_spi.o section .text
+                                          used in Debug\spi.o
+_SPI_TransmitCRC               00008211   defined in Debug\stm8s_spi.o section .text
+_SPI_W_R_Byte                  0000844a   defined in Debug\spi.o section .text
+__endmem                       000005ff   defined in command file
+                                          *** not used ***
+__endzp                        0000000e   defined in command file section .ubsct
+                                          used in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8
+__idesc__                      00008080   defined in linker section .init
+                                          used in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8
+__memory                       00000100   defined in command file section .bss
+                                          used in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8
+__stack                        000007ff   defined in command file
+                                          used in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8
+__startmem                     00000100   defined in command file section .bss
+                                          *** not used ***
+__stext                        00008083   defined in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8 section .text
+                                          used in Debug\stm8_interrupt_vector.o
+__vectab                       00008000   defined in Debug\stm8_interrupt_vector.o section .const
+_delay                         0000841e   defined in Debug\spi.o section .text
+                                          used in Debug\gpio.o
+_exit                          000080cc   defined in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8 section .text
+_main                          000083c6   defined in Debug\main.o section .text
+                                          used in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8
+c_x                            00000008   defined in (D:\Program File\SToolset\compiler\Lib\libm0.sm8)xreg.o section .ubsct
+                                          used in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8
+c_y                            0000000b   defined in (D:\Program File\SToolset\compiler\Lib\libm0.sm8)yreg.o section .ubsct
+                                          used in D:\Program File\SToolset\compiler\Lib\crtsi0.sm8
+f_NonHandledInterrupt          00008cc4   defined in Debug\stm8_interrupt_vector.o section .text

@@ -1,0 +1,15 @@
+..\lib\src\stm8s_gpio.c
+..\lib\src\stm8s_spi.c
+..\src\gpio.c
+..\src\main.c
+..\src\spi.c
+stm8_interrupt_vector.c
+..\lib\inc\stm8s.h
+..\lib\inc\stm8s_gpio.h
+..\lib\inc\stm8s_spi.h
+..\src\gpio.h
+..\src\spi.h
+..\..\..\..\program file\stoolset\compiler\hstm8\mods0.h
+..\lib\inc\stm8s_clk.h
+..\lib\inc\stm8s_type.h
+..\src\stm8s_conf.h

@@ -1,0 +1,23 @@
+;	STMicroelectronics dependencies file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Root.Source Files...\lib\src\stm8s_gpio.c.Config.0]
+ExternDep= ..\lib\src\stm8s_gpio.c  "D:\Program File\SToolset\compiler\Hstm8\mods0.h" ..\lib\inc\stm8s_gpio.h  ..\lib\inc\stm8s.h ..\lib\inc\stm8s_type.h ..\src\stm8s_conf.h  ..\lib\inc\stm8s_clk.h ..\lib\inc\stm8s_spi.h
+
+[Root.Source Files...\lib\src\stm8s_spi.c.Config.0]
+ExternDep= ..\lib\src\stm8s_spi.c  "D:\Program File\SToolset\compiler\Hstm8\mods0.h" ..\lib\inc\stm8s_spi.h  ..\lib\inc\stm8s.h ..\lib\inc\stm8s_type.h ..\src\stm8s_conf.h  ..\lib\inc\stm8s_clk.h ..\lib\inc\stm8s_gpio.h
+
+[Root.Source Files...\src\gpio.c.Config.0]
+ExternDep= ..\src\gpio.c "D:\Program File\SToolset\compiler\Hstm8\mods0.h"  ..\src\gpio.h ..\lib\inc\stm8s.h ..\lib\inc\stm8s_type.h ..\src\stm8s_conf.h  ..\lib\inc\stm8s_clk.h ..\lib\inc\stm8s_gpio.h ..\lib\inc\stm8s_spi.h  ..\src\spi.h
+
+[Root.Source Files...\src\main.c.Config.0]
+ExternDep= ..\src\main.c "D:\Program File\SToolset\compiler\Hstm8\mods0.h"  ..\src\spi.h ..\src\gpio.h ..\lib\inc\stm8s.h ..\lib\inc\stm8s_type.h  ..\src\stm8s_conf.h ..\lib\inc\stm8s_clk.h ..\lib\inc\stm8s_gpio.h  ..\lib\inc\stm8s_spi.h
+
+[Root.Source Files...\src\spi.c.Config.0]
+ExternDep= ..\src\spi.c "D:\Program File\SToolset\compiler\Hstm8\mods0.h"  ..\src\spi.h ..\src\gpio.h ..\lib\inc\stm8s.h ..\lib\inc\stm8s_type.h  ..\src\stm8s_conf.h ..\lib\inc\stm8s_clk.h ..\lib\inc\stm8s_gpio.h  ..\lib\inc\stm8s_spi.h
+
+[Root.Source Files.stm8_interrupt_vector.c.Config.0]
+ExternDep= stm8_interrupt_vector.c  "D:\Program File\SToolset\compiler\Hstm8\mods0.h"
